@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Filterinator20002.Browser",
   "resources": {
-    "hash": "sha256-ckn0bCophsar49jp5jWI6qANbAWckoqhj37dBOnTOIU=",
+    "hash": "sha256-OvSVbKHfje/HGx97PDf2o4JcMxauT5Y6MGB0JLxaQi0=",
     "fingerprinting": {
       "Avalonia.Base.lej4cpazyx.wasm": "Avalonia.Base.wasm",
       "Avalonia.Browser.rl9khdgniu.wasm": "Avalonia.Browser.wasm",
@@ -26,8 +26,8 @@
       "Avalonia.qijfoe9ue1.wasm": "Avalonia.wasm",
       "CommunityToolkit.Mvvm.e2vsnnpwh7.wasm": "CommunityToolkit.Mvvm.wasm",
       "ExCSS.3cmrbwgssh.wasm": "ExCSS.wasm",
-      "Filterinator20002.Browser.uivvps4ex9.wasm": "Filterinator20002.Browser.wasm",
-      "Filterinator20002.ivf1sxtegg.wasm": "Filterinator20002.wasm",
+      "Filterinator20002.Browser.i3a8tpay2u.wasm": "Filterinator20002.Browser.wasm",
+      "Filterinator20002.1qh4hfeu21.wasm": "Filterinator20002.wasm",
       "FluentAvalonia.emj8s8dsgu.wasm": "FluentAvalonia.wasm",
       "HarfBuzzSharp.7jjlq223my.wasm": "HarfBuzzSharp.wasm",
       "MicroCom.Runtime.kawiq9e355.wasm": "MicroCom.Runtime.wasm",
@@ -267,8 +267,8 @@
       "Avalonia.qijfoe9ue1.wasm": "sha256-bs9js7aWxynydgqEAniLljVIZHweeFso3O3G7oHO/Gc=",
       "CommunityToolkit.Mvvm.e2vsnnpwh7.wasm": "sha256-urCLcGK7EwvlLHkxnRdiZJuOZc0hBn5JrVBi3HEQQDc=",
       "ExCSS.3cmrbwgssh.wasm": "sha256-LetdQ0hGLEK5YanJdz8wKM5i6og4oStNxUGblm41z00=",
-      "Filterinator20002.Browser.uivvps4ex9.wasm": "sha256-VhqaXruOHngKqmfoqSWluTmJ8jtg3KpSrFfreCDxJfY=",
-      "Filterinator20002.ivf1sxtegg.wasm": "sha256-nhaKpOKatf05+LR9wTONSBcTgfVZ69sGnjDkehrtvv0=",
+      "Filterinator20002.Browser.i3a8tpay2u.wasm": "sha256-4rkzTsoSFADE0GpjOATNd+CHUMzj2B7UMUsgcr5or6Q=",
+      "Filterinator20002.1qh4hfeu21.wasm": "sha256-ud9KWzzpOFkoHrIhvtabTCa1LbXqE7tc9vucrzdhsK8=",
       "FluentAvalonia.emj8s8dsgu.wasm": "sha256-ql5ccGtNWEP4yr+KnzI59rfN8zqOnvCOoDqtA8TA/NU=",
       "HarfBuzzSharp.7jjlq223my.wasm": "sha256-3Sdq/hXcdSmUW2SGS7ia4rge4bd5cue4X95buJ0oyBg=",
       "MicroCom.Runtime.kawiq9e355.wasm": "sha256-/DG+HZx8PONwVHUjUYFoIsqL9jJhDZC37tZRjpi2YhI=",
