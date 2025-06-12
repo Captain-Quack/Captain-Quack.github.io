@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Filterinator20002.Browser",
   "resources": {
-    "hash": "sha256-tgH2SoxKtAJDPLozVZ4bfehRx7dh8s+oB9YvRwC5ChA=",
+    "hash": "sha256-rn4NtyYUpi2Ff3Rx5ZwtrX2OIXSG8E5wiTk86+afwbk=",
     "fingerprinting": {
       "Avalonia.Base.hi23v6rqyq.wasm": "Avalonia.Base.wasm",
       "Avalonia.Browser.bsnxfg8utl.wasm": "Avalonia.Browser.wasm",
@@ -27,7 +27,7 @@
       "CommunityToolkit.Mvvm.4sdv9o2ycm.wasm": "CommunityToolkit.Mvvm.wasm",
       "ExCSS.n8doo8xa5p.wasm": "ExCSS.wasm",
       "Filterinator20002.Browser.lpoxq6kk8y.wasm": "Filterinator20002.Browser.wasm",
-      "Filterinator20002.rudgagw840.wasm": "Filterinator20002.wasm",
+      "Filterinator20002.2eziu50k8q.wasm": "Filterinator20002.wasm",
       "FluentAvalonia.kr27j7vqv6.wasm": "FluentAvalonia.wasm",
       "HarfBuzzSharp.t6awo9e50y.wasm": "HarfBuzzSharp.wasm",
       "MicroCom.Runtime.8lt3mh4b1t.wasm": "MicroCom.Runtime.wasm",
@@ -268,7 +268,7 @@
       "CommunityToolkit.Mvvm.4sdv9o2ycm.wasm": "sha256-fP9s6pvQnT+gJSrJNfvi4Visl8xT031P2rPXWfsg5vs=",
       "ExCSS.n8doo8xa5p.wasm": "sha256-ByHmSvfjFDNSNuQPp71LwWi0Pzr2lgp4SmTI6QwTDpM=",
       "Filterinator20002.Browser.lpoxq6kk8y.wasm": "sha256-p5LzbPu814CRK/55VuzytJQg3ySethBOHWFDvR3YnRA=",
-      "Filterinator20002.rudgagw840.wasm": "sha256-3cuBg19o7JqEm1hMxzDa70W3cQsSP8ZoNHZOMqd6XP8=",
+      "Filterinator20002.2eziu50k8q.wasm": "sha256-qpXw+UKm1Sob08ZFSGqGjzePIf+ZwUp4OUPO1x8uebY=",
       "FluentAvalonia.kr27j7vqv6.wasm": "sha256-wOjCtSqNyEAT8+lOeq29vtrczHNmu1tf5BBUijiCHYI=",
       "HarfBuzzSharp.t6awo9e50y.wasm": "sha256-lfdPvOSa1dQLvql5Y3URAjYop4wPZjr90wO4kuQ/Ybk=",
       "MicroCom.Runtime.8lt3mh4b1t.wasm": "sha256-dI22KS20yc+ziyg4tSUpmSjG0ebPXDL5QTSZf+ehjwI=",
