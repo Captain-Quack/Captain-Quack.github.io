@@ -302,7 +302,8 @@
     });
     function highlight(node, query){
       if(!node || !node.dataset.raw) return;
-      const t = node.dataset.raw; if(!query){ node.innerHTML = t; return; }
+      const t = node.dataset.raw;
+      if(!query){ node.innerHTML = t; return; }
       const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
       node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
     }
