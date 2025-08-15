@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Captain‑Quack • Technical Portfolio</title>
+  <meta name="description" content="Sleek, modern portfolio for Captain‑Quack — games, interpreters, and quizbowl tools." />
+  <link rel="icon" href="https://github.com/Captain-Quack.png" />
+  <style>
+    :root{
+      --bg:#0b0d12;--card:#12151d;--muted:#8b93a7;--text:#e6e9f2;--highlight:#7dd3fc;--accent:#8b5cf6;--ring:#2a3247;
+      --radius:16px;--shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(125,211,252,.12), transparent 60%),
+        radial-gradient(800px 500px at 90% 10%, rgba(139,92,246,.10), transparent 65%),
+        linear-gradient(180deg, #0a0c11, #0b0d12 35%);
+      color:var(--text); font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin-inline:auto; padding:28px}
+    header{position:sticky; top:0; backdrop-filter: blur(12px); background:rgba(11,13,18,.55); border-bottom:1px solid #1b2233; z-index:10}
+    .nav{display:flex; align-items:center; gap:16px; justify-content:space-between;}
+    .brand{display:flex; align-items:center; gap:12px}
+    .avatar{width:44px;height:44px;border-radius:50%;border:1px solid var(--ring); box-shadow: var(--shadow)}
+    .brand h1{font-size:18px; margin:0}
+    .brand small{display:block; color:var(--muted); font-weight:500}
+    .links{display:flex; gap:14px}
+    .pill{padding:.5rem .85rem; background:#0f1320; border:1px solid var(--ring); border-radius:999px; color:var(--muted)}
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:26px; align-items:center; padding:36px 0}
+    .hero h2{margin:0 0 8px; font-weight:800; letter-spacing:.2px; font-size: clamp(28px, 5vw, 44px)}
+    .hero p{margin:0; color:var(--muted)}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:14px; margin-top:16px; color:#9ec6ff}
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12, 1fr)}
+    .card{grid-column: span 12; background:var(--card); border:1px solid #1a2031; border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+    @media (min-width:700px){ .card{grid-column: span 6} }
+    @media (min-width:1024px){ .card{grid-column: span 4} }
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .meta{display:flex; flex-wrap:wrap; gap:10px; align-items:center; color:var(--muted); font-size:14px}
+    .tag{padding:.3rem .6rem; border:1px solid #24304b; border-radius:999px; color:#b1b8c9}
+    .actions{display:flex; gap:10px; margin-top:12px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:.55rem .8rem; border-radius:12px; border:1px solid #2a3247; background:#0e1424; cursor:pointer}
+    .btn:hover{border-color:#3c486a}
+    .searchbar{display:flex; gap:10px; align-items:center; margin:8px 0 20px}
+    .searchbar input{flex:1; padding:12px 14px; border-radius:12px; border:1px solid #1c2540; background:#0d1324; color:var(--text)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{border:1px solid #263051; background:#0e1426; color:#9fb2d1; border-radius:999px; padding:.4rem .75rem; cursor:pointer}
+    .chip.active{outline:2px solid var(--accent); outline-offset:1px}
+    footer{margin:42px 0 14px; color:var(--muted); text-align:center}
+    .section-title{display:flex; align-items:center; justify-content:space-between; margin-top:10px}
+    .section-title h2{margin:0 0 6px; font-size:20px; font-weight:700}
+    .kpi{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    .kpi span{background:#0f1424; border:1px solid #1f2943; padding:.45rem .7rem; border-radius:10px; color:#b3bdd3}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="avatar" alt="Avatar" src="https://github.com/Captain-Quack.png" />
+        <div>
+          <h1>Captain‑Quack <small>Games • Interpreters • Quizbowl Tools</small></h1>
+        </div>
+      </div>
+      <nav class="links">
+        <a class="pill" href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="pill" href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer">itch.io</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>Building playful systems and sharp tools.</h2>
+        <p>I like fast feedback loops: Unity games, language interpreters, and practical NLP for quizbowl. Here are a few projects I’m proud of.</p>
+        <div class="badge">➜ <span>Open‑source across C#, Python, and F#</span></div>
+        <div class="kpi" aria-label="Quick stats">
+          <span title="Public repositories">42 repos</span>
+          <span title="Stars across public repos">58 stars</span>
+          <span title="Followers">8 followers</span>
+        </div>
+      </div>
+      <div>
+        <div class="searchbar" role="search">
+          <input id="q" placeholder="Search projects (e.g., Unity, compiler, quizbowl)" aria-label="Search projects" />
+        </div>
+        <div class="chips" id="chips" aria-label="Filter by tag">
+          <button class="chip" data-tag="Unity">Unity</button>
+          <button class="chip" data-tag="C#">C#</button>
+          <button class="chip" data-tag="Python">Python</button>
+          <button class="chip" data-tag="F#">F#</button>
+          <button class="chip" data-tag="Compiler">Compiler</button>
+          <button class="chip" data-tag="NLP">NLP</button>
+          <button class="chip" data-tag="Quizbowl">Quizbowl</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <h2>Featured Projects</h2>
+      <a class="pill" href="https://github.com/Captain-Quack?tab=repositories" target="_blank" rel="noreferrer">View all →</a>
+    </section>
+
+    <section class="grid" id="grid">
+      <!-- Backfire -->
+      <article class="card" data-tags="Unity,C#,GameDev">
+        <h3>Backfire</h3>
+        <p>A fast‑paced Unity game made by the “sick seven” at CMU’s NHSGA (2025).</p>
+        <div class="meta">
+          <span>⭐ 2</span>
+          <span>Last updated: Aug 11, 2025</span>
+          <span>Stack: C#, ShaderLab</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/Backfire" target="_blank" rel="noreferrer">Source</a>
+        </div>
+      </article>
+
+      <!-- Filterinator2000 -->
+      <article class="card" data-tags="C#,NLP,Quizbowl,Tooling">
+        <h3>Filterinator2000</h3>
+        <p>A qbreader‑based search tool that de‑duplicates similar clues using lightweight NLP.</p>
+        <div class="meta">
+          <span>⭐ 2</span>
+          <span>Last updated: May 29, 2025</span>
+          <span>Stack: C#, HTML</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/Filterinator2000" target="_blank" rel="noreferrer">Source</a>
+        </div>
+      </article>
+
+      <!-- Lox -->
+      <article class="card" data-tags="C#,Compiler,Interpreter">
+        <h3>Lox</h3>
+        <p>A from‑scratch C# translation of Bob Nystrom’s Lox interpreter (Crafting Interpreters).</p>
+        <div class="meta">
+          <span>⭐ 2</span>
+          <span>Last updated: Jun 29, 2023</span>
+          <span>Stack: C#</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/Lox" target="_blank" rel="noreferrer">Source</a>
+          <a class="btn" href="https://craftinginterpreters.com/" target="_blank" rel="noreferrer">Reference</a>
+        </div>
+      </article>
+
+      <!-- QbreaderFrequencyList -->
+      <article class="card" data-tags="Python,Quizbowl,Tooling">
+        <h3>QbreaderFrequencyList</h3>
+        <p>Parses qbreader answerlines into usable frequency lists for study and analytics.</p>
+        <div class="meta">
+          <span>⭐ 1</span>
+          <span>Last updated: Sep 29, 2023</span>
+          <span>Stack: Python</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/QbreaderFrequencyList" target="_blank" rel="noreferrer">Source</a>
+        </div>
+      </article>
+
+      <!-- FrequencyList (F#) -->
+      <article class="card" data-tags="F#,Quizbowl,Tooling">
+        <h3>FrequencyList (F#)</h3>
+        <p>A compact F# implementation of a quizbowl frequency list maker.</p>
+        <div class="meta">
+          <span>⭐ 1</span>
+          <span>Last updated: Jun 8, 2024</span>
+          <span>Stack: F#</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/FrequencyList" target="_blank" rel="noreferrer">Source</a>
+        </div>
+      </article>
+
+      <!-- Braintribute -->
+      <article class="card" data-tags="Jupyter,Play,Interpreter">
+        <h3>Braintribute</h3>
+        <p>A playful Jupyter Notebook experiment that began as a brainfuck runner and spiraled into more.</p>
+        <div class="meta">
+          <span>⭐ 2</span>
+          <span>Last updated: 2025</span>
+          <span>Stack: Jupyter Notebook</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/Captain-Quack/Braintribute" target="_blank" rel="noreferrer">Source</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-title" style="margin-top:26px">
+      <h2>Skills & Focus</h2>
+    </section>
+    <div class="grid">
+      <article class="card" style="grid-column: span 12">
+        <div class="meta" style="gap:8px">
+          <span class="tag">C# / Unity</span>
+          <span class="tag">Python</span>
+          <span class="tag">F#</span>
+          <span class="tag">Compilers / Interpreters</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Game Dev</span>
+          <span class="tag">Data tools</span>
+        </div>
+      </article>
+    </div>
+
+    <section class="section-title" style="margin-top:26px">
+      <h2>Contact</h2>
+    </section>
+    <div class="grid">
+      <article class="card" style="grid-column: span 12">
+        <p>Want to collaborate or try a build? Reach out via <a href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer">GitHub</a> or check out <a href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer">itch.io</a>.</p>
+      </article>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Captain‑Quack • Built with semantic HTML & vanilla CSS
+    </footer>
+  </main>
+
+  <script>
+    // live year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple filter logic (query + tag chips)
+    const q = document.getElementById('q');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const cards = Array.from(document.querySelectorAll('#grid .card'));
+
+    const getActiveTags = () => chips.filter(c => c.classList.contains('active')).map(c => c.dataset.tag.toLowerCase());
+
+    function applyFilters(){
+      const text = (q.value || '').trim().toLowerCase();
+      const active = getActiveTags();
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const matchText = !text || title.includes(text) || desc.includes(text) || tags.includes(text);
+        const matchTags = active.length === 0 || active.every(tag => tags.includes(tag));
+        card.style.display = (matchText && matchTags) ? '' : 'none';
+      });
+    }
+
+    q.addEventListener('input', applyFilters);
+    chips.forEach(c => c.addEventListener('click', () => { c.classList.toggle('active'); applyFilters(); }));
+  </script>
+</body>
+</html>
