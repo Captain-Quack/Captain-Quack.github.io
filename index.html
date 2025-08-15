@@ -316,8 +316,9 @@
       if(!node || !node.dataset.raw) return;
       const t = node.dataset.raw;
       if(!query){ node.innerHTML = t; return; }
-      const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      node.innerHTML = t.replace
+      const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
+    }
     function refreshHighlight(){
       const text = (q.value || '').trim();
       cards.forEach(card=>{ highlight(card.querySelector('h3'), text); highlight(card.querySelector('p'), text); });
@@ -330,6 +331,16 @@
     const toTop = document.getElementById('toTop');
     window.addEventListener('scroll', ()=>{ if(window.scrollY > 400){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); } });
     toTop.addEventListener('click', ()=> window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+  <script>
+    // Hotfix: override highlight() with correct escaping
+    function highlight(node, query){
+      if(!node || !node.dataset.raw) return;
+      const t = node.dataset.raw;
+      if(!query){ node.innerHTML = t; return; }
+      const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
+    }
   </script>
 </body>
 </html>
