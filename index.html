@@ -55,7 +55,7 @@
     .section-title h2{margin:0 0 6px; font-size:20px; font-weight:700}
     .kpi{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
     .kpi span{background:#0f1424; border:1px solid #1f2943; padding:.45rem .7rem; border-radius:10px; color:#b3bdd3}
-  /* --- JUICE ADDITIONS --- */
+    /* --- JUICE ADDITIONS --- */
     .headline{background:linear-gradient(90deg, var(--highlight), #b1a6ff, #7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 8s linear infinite}
     @keyframes shine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
     .card{position:relative;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,opacity .3s ease;transform-style:preserve-3d;opacity:0;transform:translateY(10px) scale(.98)}
@@ -87,14 +87,14 @@
         </div>
       </div>
       <nav class="links">
-        <a class="pill" href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="pill" href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer">itch.io</a>
-        <a class="pill" href="/old/" target="_blank" rel="noreferrer">Filterinator 2000</a>
+        <a class="pill" href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a class="pill" href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer noopener">itch.io</a>
+        <a class="pill" href="/old/" target="_blank" rel="noreferrer noopener">Filterinator 2000</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main">
     <section class="hero">
       <div>
         <h2 class="headline">Building playful systems and sharp tools.</h2>
@@ -124,7 +124,7 @@
 
     <section class="section-title">
       <h2>Featured Projects</h2>
-      <a class="pill" href="https://github.com/Captain-Quack?tab=repositories" target="_blank" rel="noreferrer">View all →</a>
+      <a class="pill" href="https://github.com/Captain-Quack?tab=repositories" target="_blank" rel="noreferrer noopener">View all →</a>
     </section>
 
     <section class="grid" id="grid">
@@ -243,7 +243,7 @@
     </section>
     <div class="grid">
       <article class="card" style="grid-column: span 12">
-        <p>Want to collaborate or try a build? Reach out via <a href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer">GitHub</a> or check out <a href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer">itch.io</a>.</p>
+        <p>Want to collaborate or try a build? Reach out via <a href="https://github.com/Captain-Quack" target="_blank" rel="noreferrer noopener">GitHub</a> or check out <a href="https://captain-quack.itch.io/" target="_blank" rel="noreferrer noopener">itch.io</a>.</p>
       </article>
     </div>
 
@@ -306,19 +306,22 @@
       card.addEventListener('pointerleave', ()=>{ card.style.transform = ''; });
     });
 
-    // Search highlight
+    // Search highlight helpers
     cards.forEach(card=>{
       const h = card.querySelector('h3'); const p = card.querySelector('p');
       if(h && !h.dataset.raw) h.dataset.raw = h.textContent;
       if(p && !p.dataset.raw) p.dataset.raw = p.textContent;
     });
+
     function highlight(node, query){
       if(!node || !node.dataset.raw) return;
       const t = node.dataset.raw;
       if(!query){ node.innerHTML = t; return; }
-      const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      // Correct escaping: escape regex metacharacters in the query string
+      const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
     }
+
     function refreshHighlight(){
       const text = (q.value || '').trim();
       cards.forEach(card=>{ highlight(card.querySelector('h3'), text); highlight(card.querySelector('p'), text); });
@@ -332,15 +335,27 @@
     window.addEventListener('scroll', ()=>{ if(window.scrollY > 400){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); } });
     toTop.addEventListener('click', ()=> window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+
+  <!-- Self-tests (run with ?test=1 so they don't affect users) -->
   <script>
-    // Hotfix: override highlight() with correct escaping
-    function highlight(node, query){
-      if(!node || !node.dataset.raw) return;
-      const t = node.dataset.raw;
-      if(!query){ node.innerHTML = t; return; }
-      const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
-      node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
-    }
+    (function(){
+      const params = new URLSearchParams(location.search);
+      if(params.get('test') !== '1') return;
+      console.group('Portfolio self-tests');
+      try{
+        // Create temporary nodes to exercise highlight()
+        const temp = document.createElement('div');
+        temp.innerHTML = '<h3 id="t">Test [title] with C# and (a+b)*c?</h3><p id="d">Use regex chars: . * + ? ^ $ { } ( ) | [ ] \\</p>';
+        document.body.appendChild(temp);
+        const t = temp.querySelector('#t'); const d = temp.querySelector('#d');
+        t.dataset.raw = t.textContent; d.dataset.raw = d.textContent;
+        const queries = ['.', '*', '[', '\\', 'C#', '(a+b)*c?', '++', '^$', '{1,3}', '|', 'title'];
+        queries.forEach(q=>{ highlight(t,q); highlight(d,q); console.log('highlight OK for query:', q); });
+        temp.remove();
+        console.log('All self-tests passed.');
+      }catch(err){ console.error('Self-tests failed:', err); }
+      console.groupEnd();
+    })();
   </script>
 </body>
 </html>
