@@ -55,13 +55,33 @@
     .section-title h2{margin:0 0 6px; font-size:20px; font-weight:700}
     .kpi{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
     .kpi span{background:#0f1424; border:1px solid #1f2943; padding:.45rem .7rem; border-radius:10px; color:#b3bdd3}
+  /* --- JUICE ADDITIONS --- */
+    .headline{background:linear-gradient(90deg, var(--highlight), #b1a6ff, #7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 8s linear infinite}
+    @keyframes shine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+    .card{position:relative;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,opacity .3s ease;transform-style:preserve-3d;opacity:0;transform:translateY(10px) scale(.98)}
+    .reveal{opacity:1;transform:translateY(0) scale(1)}
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.45);border-color:#2b3a66}
+    .card::after{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg, rgba(125,211,252,.15), rgba(139,92,246,.12));opacity:0;transition:opacity .3s}
+    .card:hover::after{opacity:1}
+    .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid #1a2031;background:#0d1324;filter:saturate(1.1) contrast(1.05);box-shadow:var(--shadow);margin:0 0 10px}
+    .btn{position:relative;overflow:hidden}
+    .btn::before{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:transform .6s}
+    .btn:hover::before{transform:translateX(100%)}
+    .links .pill:hover{box-shadow:0 0 0 1px var(--ring),0 0 30px rgba(125,211,252,.25)}
+    mark{background:linear-gradient(to right, rgba(125,211,252,.25), rgba(139,92,246,.25));padding:0 .2em;border-radius:4px}
+    .hero .badge{animation:floaty 6s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    body::before{content:"";position:fixed;inset:-10%;z-index:-1;background:radial-gradient(600px 400px at 15% 10%, rgba(125,211,252,.12), transparent 70%),radial-gradient(700px 450px at 85% 0%, rgba(139,92,246,.10), transparent 70%);animation:drift 25s ease-in-out infinite alternate}
+    @keyframes drift{from{transform:translateY(0)}to{transform:translateY(20px)}}
+    .toTop{position:fixed;right:18px;bottom:18px;border-radius:999px;border:1px solid #2a3247;background:#0e1424;padding:.6rem .8rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+    .toTop.show{opacity:1;pointer-events:auto;transform:translateY(0)}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">
-        <img class="avatar" alt="Avatar" src="https://github.com/Captain-Quack.png" />
+        <img class="avatar" alt="Avatar" src="https://github.com/Captain-Quack.png" fetchpriority="high" />
         <div>
           <h1>Captain‑Quack <small>Games • Interpreters • Quizbowl Tools</small></h1>
         </div>
@@ -77,13 +97,13 @@
   <main class="container">
     <section class="hero">
       <div>
-        <h2>Building playful systems and sharp tools.</h2>
+        <h2 class="headline">Building playful systems and sharp tools.</h2>
         <p>I like fast feedback loops: Unity games, language interpreters, and practical NLP for quizbowl. Here are a few projects I’m proud of.</p>
         <div class="badge">➜ <span>Open‑source across C#, Python, and F#</span></div>
         <div class="kpi" aria-label="Quick stats">
-          <span title="Public repositories">42 repos</span>
-          <span title="Stars across public repos">58 stars</span>
-          <span title="Followers">8 followers</span>
+          <span class="count" data-target="42" data-suffix=" repos" title="Public repositories">0</span>
+          <span class="count" data-target="58" data-suffix=" stars" title="Stars across public repos">0</span>
+          <span class="count" data-target="8" data-suffix=" followers" title="Followers">0</span>
         </div>
       </div>
       <div>
@@ -108,9 +128,8 @@
     </section>
 
     <section class="grid" id="grid">
-      <!-- Backfire -->
-      <article class="card" data-tags="Unity,C#,GameDev">
-        <h3>Backfire</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/Backfire" alt="Backfire repository banner" loading="lazy" />
+        $2
         <p>A fast‑paced Unity game made by the “sick seven” at CMU’s NHSGA (2025).</p>
         <div class="meta">
           <span>⭐ 2</span>
@@ -122,9 +141,8 @@
         </div>
       </article>
 
-      <!-- Filterinator2000 -->
-      <article class="card" data-tags="C#,NLP,Quizbowl,Tooling">
-        <h3>Filterinator2000</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/Filterinator2000" alt="Filterinator2000 repository banner" loading="lazy" />
+        $2
         <p>A qbreader‑based search tool that de‑duplicates similar clues using lightweight NLP.</p>
         <div class="meta">
           <span>⭐ 2</span>
@@ -137,9 +155,8 @@
         </div>
       </article>
 
-      <!-- Lox -->
-      <article class="card" data-tags="C#,Compiler,Interpreter">
-        <h3>Lox</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/Lox" alt="Lox repository banner" loading="lazy" />
+        $2
         <p>A from‑scratch C# translation of Bob Nystrom’s Lox interpreter (Crafting Interpreters).</p>
         <div class="meta">
           <span>⭐ 2</span>
@@ -152,9 +169,8 @@
         </div>
       </article>
 
-      <!-- QbreaderFrequencyList -->
-      <article class="card" data-tags="Python,Quizbowl,Tooling">
-        <h3>QbreaderFrequencyList</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/QbreaderFrequencyList" alt="QbreaderFrequencyList repository banner" loading="lazy" />
+        $2
         <p>Parses qbreader answerlines into usable frequency lists for study and analytics.</p>
         <div class="meta">
           <span>⭐ 1</span>
@@ -166,9 +182,8 @@
         </div>
       </article>
 
-      <!-- FrequencyList (F#) -->
-      <article class="card" data-tags="F#,Quizbowl,Tooling">
-        <h3>FrequencyList (F#)</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/FrequencyList" alt="FrequencyList repository banner" loading="lazy" />
+        $2
         <p>A compact F# implementation of a quizbowl frequency list maker.</p>
         <div class="meta">
           <span>⭐ 1</span>
@@ -180,9 +195,8 @@
         </div>
       </article>
 
-      <!-- Braintribute -->
-      <article class="card" data-tags="Jupyter,Play,Interpreter">
-        <h3>Braintribute</h3>
+      $1<img class="thumb" src="https://opengraph.githubassets.com/1/Captain-Quack/Braintribute" alt="Braintribute repository banner" loading="lazy" />
+        $2
         <p>A playful Jupyter Notebook experiment that began as a brainfuck runner and spiraled into more.</p>
         <div class="meta">
           <span>⭐ 2</span>
@@ -224,6 +238,7 @@
     <footer>
       © <span id="year"></span> Captain‑Quack • Built with semantic HTML & vanilla CSS
     </footer>
+    <button class="toTop" id="toTop" aria-label="Scroll to top">↑</button>
   </main>
 
   <script>
@@ -252,6 +267,57 @@
 
     q.addEventListener('input', applyFilters);
     chips.forEach(c => c.addEventListener('click', () => { c.classList.toggle('active'); applyFilters(); }));
+  </script>
+  <script>
+    // Reveal cards on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); } });
+    }, { threshold: .15 });
+    cards.forEach(c=>io.observe(c));
+
+    // Count-up KPIs
+    document.querySelectorAll('.count').forEach(el=>{
+      const target = +el.dataset.target; const suffix = el.dataset.suffix || '';
+      let cur = 0; const step = Math.max(1, Math.round(target/60));
+      const tick = ()=>{ cur += step; if(cur >= target){ cur = target; } el.textContent = cur + suffix; if(cur < target) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    });
+
+    // Card tilt based on pointer
+    cards.forEach(card=>{
+      card.addEventListener('pointermove', (e)=>{
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left)/r.width, y = (e.clientY - r.top)/r.height;
+        const rx = (0.5 - y) * 6, ry = (x - 0.5) * 8;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+      });
+      card.addEventListener('pointerleave', ()=>{ card.style.transform = ''; });
+    });
+
+    // Search highlight
+    cards.forEach(card=>{
+      const h = card.querySelector('h3'); const p = card.querySelector('p');
+      if(h && !h.dataset.raw) h.dataset.raw = h.textContent;
+      if(p && !p.dataset.raw) p.dataset.raw = p.textContent;
+    });
+    function highlight(node, query){
+      if(!node || !node.dataset.raw) return;
+      const t = node.dataset.raw; if(!query){ node.innerHTML = t; return; }
+      const safe = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      node.innerHTML = t.replace(new RegExp(safe, 'ig'), m => `<mark>${m}</mark>`);
+    }
+    function refreshHighlight(){
+      const text = (q.value || '').trim();
+      cards.forEach(card=>{ highlight(card.querySelector('h3'), text); highlight(card.querySelector('p'), text); });
+    }
+    q.addEventListener('input', refreshHighlight);
+    chips.forEach(c=>c.addEventListener('click', refreshHighlight));
+    refreshHighlight();
+
+    // Scroll-to-top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', ()=>{ if(window.scrollY > 400){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); } });
+    toTop.addEventListener('click', ()=> window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
